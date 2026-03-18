@@ -14,8 +14,11 @@ public class ViewPedido {
 
 			switch (valorLido) {
 			case 1: // inclusao - novo pedido
-				
-				Pedido pedidoInclusao = formPedido.processaInclusao();
+				Integer novoId = pedido.novoId();
+				Pedido pedidoInclusao = formPedido.processaInclusao(novoId);
+
+                // form item pedido
+
 				pedidoDao.salvar(pedidoInclusao);
 				break;
 				

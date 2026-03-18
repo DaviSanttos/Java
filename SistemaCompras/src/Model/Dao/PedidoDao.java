@@ -55,4 +55,10 @@ public class PedidoDao {
 		return pedidoDao.listar();
 	}
 
+	public Integer novoId (){
+		pedidoDao.setContadorSeq();
+		Integer id = pedidoDao.getContadorSeq();
+		return id;
+	}
+
 }

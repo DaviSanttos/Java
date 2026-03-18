@@ -6,6 +6,7 @@ import java.util.List;
 import Model.Entities.Pedido;
 
 public class PedidoDaoMemoria {
+	private Integer contadorSeq = 0;
 	private List<Pedido> pedidos=new ArrayList<>();
 	
 	public boolean salvar(Pedido pedido) {
@@ -42,7 +43,13 @@ public class PedidoDaoMemoria {
 		return pedidos;
 	}
 
-	
+	public getContadorSeq(){
+		return this.contadorSeq;
+	}
+
+	public setContadorSeq(){
+		this.contadorSeq++;
+	}
 	
 
 }

@@ -1,46 +1,55 @@
 package View.Forms;
 
+import java.util.Date;
 import java.util.Scanner;
 
+import Model.Entities.ItemPedido;
+import Model.Entities.Produto;
 import Model.Entities.pedido;
 
-public class FormPedido {
+public class FormItemPedido {
 	
-	Pedido pedido;
+	ItemPedido itemPedido;
 	
 	Scanner leitor=new Scanner(System.in);
 	
-	public void setPedido(Pedido pedido) {
-		this.pedido=pedido;
+	public void setItemPedido(ItemPedido itemPedido) {
+		this.itemPedido=itemPedido;
 	}
 	
 	public void show(String cabecalho) {
 		System.out.println("===="+cabecalho+"=====");
 	
-		System.out.println("pedido id:"+pedido.getId());
-		System.out.println("pedido nome:"+pedido.getNome());
-		System.out.println("pedido preço:"+pedido.getPreco());
+		System.out.println("itemPedido id:"+itemPedido.getId());
+		System.out.println("itemPedido nome:"+itemPedido.getNome());
+		System.out.println("itemPedido preço:"+itemPedido.getPreco());
 	}
 	
-import java.util.Date;
-import java.util.Scanner;
-
-	public Pedido processaInclusao(Integer id) {
-		System.out.println("=== INCLUSÃO ===");
+	public ItemPedido processaInclusao(Produto produto) {
+		System.out.println("=== INCLUSÃO ITEM PEDIDO ===");
 
 		Scanner leitor = new Scanner(System.in);
-		Pedido p = new Pedido();
+		ItemPedido p = new ItemPedido();
 
 		// gerar data para o pedido
 		Date date = new Date();
 
+		// pedir id 
+		System.out.print("ID do pedido: ");
+		int id = leitor.nextInt();
+
 		// pedir quantidade
-		// System.out.print("Quantidade: ");
-		// int quantidade = leitor.nextInt();
+		System.out.print("Quantidade: ");
+		int quantidade = leitor.nextInt();
+
+
+		double precoUnitario = leitor.nextDouble();
 
 		// setando dados no pedido
 		p.setId(id);
-		p.setDate(date);
+		
+		p.setQuantidade(quantidade);
+		p.setPrecoUnitario(precoUnitario);
 
 		// item pedido
 

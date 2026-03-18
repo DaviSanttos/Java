@@ -4,6 +4,7 @@ public class ItemPedido {
 	
 	private Produto produto; 
 	private double quantidade;
+	private double precoUnitario;
 
 	
 	//===============
@@ -23,5 +24,11 @@ public class ItemPedido {
 	}
 	public void setQuantidade(double quantidade) {
 		this.quantidade = quantidade;
+	}
+	public void setPrecoUnitario(double precoUnitario) {
+		this.precoUnitario = precoUnitario;
+	}
+	public double getPrecoUnitario() {
+		return this.precoUnitario;
 	}
 }

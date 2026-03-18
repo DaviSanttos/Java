@@ -14,4 +14,11 @@ public class LerOpcao {
 		
 		return valor;
 	}
+
+	public int mostrarMenu(String menu) {
+		System.out.println(menu);
+		int valor=leitor.nextInt();
+		
+		return valor;
+	}
 }

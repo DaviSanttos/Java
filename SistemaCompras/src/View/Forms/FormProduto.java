@@ -2,6 +2,7 @@ package View.Forms;
 
 import java.util.Scanner;
 
+import Model.Dao.ProdutoDao;
 import Model.Entities.Produto;
 
 public class FormProduto {
@@ -9,6 +10,12 @@ public class FormProduto {
 	Produto produto;
 	
 	Scanner leitor=new Scanner(System.in);
+	
+	ProdutoDao produtoDao;
+
+    public FormProduto(ProdutoDao produtoDao) {
+        this.produtoDao = produtoDao;
+    }
 	
 	public void setProduto(Produto produto) {
 		this.produto=produto;
@@ -76,5 +83,24 @@ public class FormProduto {
 		return id;
 	}
 	
+	public Produto selecionarProduto() {
+
+			System.out.println("=== SELECIONAR PRODUTO ===");
+
+			for (Produto p : produtoDao.listar()) {
+				System.out.println(
+					"ID: " + p.getId() +
+					" | Nome: " + p.getNome() +
+					" | Preço: " + p.getPreco()
+				);
+			}
+
+			System.out.print("Digite o ID do produto: ");
+			long id = leitor.nextLong();
+
+			Produto produto = produtoDao.buscar(id);
+
+			return produto;
+		}
 
 }

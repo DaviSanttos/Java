@@ -43,11 +43,11 @@ public class PedidoDaoMemoria {
 		return pedidos;
 	}
 
-	public getContadorSeq(){
+	public Integer getContadorSeq(){
 		return this.contadorSeq;
 	}
 
-	public setContadorSeq(){
+	public void setContadorSeq(){
 		this.contadorSeq++;
 	}
 	

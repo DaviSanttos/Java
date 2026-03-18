@@ -1,11 +1,12 @@
 package Model.Entities;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Pedido {
 	private long id;
-	private String date;
+	private Date date;
 	private double valorTotal=0;
 	
 	//=======PEDIDO ITENS
@@ -38,14 +39,13 @@ public class Pedido {
 		this.id = id;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
-
 	public double getValorTotal() {
 		return valorTotal;
 	}
@@ -53,9 +53,17 @@ public class Pedido {
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	
-	
-	
-	
+
+	public List<ItemPedido> getItens() {
+    	return itens;
+	}
+
+	public void setItens(List<ItemPedido> itens) {
+		this.itens = itens;
+	}
+
+	public void removerItem(long id) {
+		itens.removeIf(item -> item.getId() == id);
+	}
 
 }

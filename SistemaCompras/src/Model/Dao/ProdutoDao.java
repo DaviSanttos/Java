@@ -10,12 +10,6 @@ public class ProdutoDao {
 	ProdutoDaoMemoria produtoDaoMem=new ProdutoDaoMemoria();
 	
 	public boolean salvar(Produto produto) {
-		//abrir o banco de dados
-		//fazer o sql de insercao no banco
-		//verificar se o produto ja existe
-		//se nao existe, inserir
-		//se existe, emitir mensagem de erro
-		
 		if(produtoDaoMem.salvar(produto)) {
 			System.out.println("Produto adicionado com sucesso!");
 			return true;

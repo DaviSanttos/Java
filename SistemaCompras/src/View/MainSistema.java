@@ -18,13 +18,14 @@ public class MainSistema {
 
         int opcao = 0;
 
-        while (opcao != 3) {
+        while (opcao != 4) {
 
             opcao = lerOpcao.mostrarMenu(
                     "=== MENU PRINCIPAL ===\n" +
                     "1 - Produtos\n" +
                     "2 - Pedidos\n" +
-                    "3 - Sair"
+                    "3 - Apresentação\n" +
+                    "4 - Sair"
             );
 
             switch (opcao) {
@@ -38,6 +39,10 @@ public class MainSistema {
                     break;
 
                 case 3:
+                    ApresentacaoSistema.executar();
+                    break;
+
+                case 4:
                     System.out.println("Encerrando sistema...");
                     break;
 
